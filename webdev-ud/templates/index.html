@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block home %}
+	{% for post in posts %}
+	<div class="row">
+		<div class="col-md-2 hidden-sm hidden-xs"></div>
+		<div class="col-md-8 post-block">
+			<h2><a href="/blog/{{post.key().id()}}">{{post.subject}}</a></h2>
+			<div class="post-excerpt">
+				{{post.content | truncate}}
+				<br>
+				<a href="/blog/{{post.key().id()}}" class="btn btn-default more">Read more</a>
+			</div>
+		</div>
+		<div class="col-md-2 hidden-sm hidden-xs"></div>
+	</div>
+	{% endfor %}
+{% endblock home %}

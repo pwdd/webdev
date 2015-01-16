@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block post %}
+<div class="row">
+	<div class="col-md-2 hidden-sm"></div>
+	<div class="col-md-8">
+		<h1>{% block title %}{{post.subject}}{% endblock title %}</h1>
+		<hr>
+		<div class="post-content">
+			{{post.content | nl2br | safe}}
+		</div>
+		<hr>
+		<div class="time">Posted on {{post.created.strftime("%b %d, %Y")}}, by {{post.author}}</div>
+	</div>
+	<div class="col-md-2 hidden-sm"></div>
+</div>
+{% endblock post %}

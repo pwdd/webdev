@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block login %}
+<form method="post" class="form-horizontal top50 bottom50">
+  <div class="form-group">
+    <label for="username" class="col-sm-2 control-label">Username</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="username" value="{{username}}" name="username">
+      <div class="error"><strong><em>{{usernameError}}</em></strong></div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="pw" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="password" value="{{password}}" name="password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" class="btn btn-default" value="Login"></input>
+    </div>
+  </div>
+</form>
+{% endblock login %}
